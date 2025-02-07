@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"> 
+	
+	<bean id="persona1" class="es.studium.AD_practica4.Persona">
+    <property name="nombre" value="Valentín Lorente"/>
+	</bean>
+	
+	<bean id="persona2" class="es.studium.AD_practica4.Persona">
+	    <property name="nombre" value="Javier García"/>
+	</bean>
+	
+	<bean id="persona3" class="es.studium.AD_practica4.Persona">
+	    <property name="nombre" value="Dolores Moreno"/>
+	</bean>
+	
+	<bean id="salon" class="es.studium.AD_practica4.Habitacion">
+	    <property name="nombreHabitacion" value="Salón" />
+	    <property name="pisoHabitacion" value="1" />
+	    <property name="tieneVentana" value="true" />
+	    <property name="persona" ref="persona1" />
+	</bean>
+	
+	<bean id="cocina" class="es.studium.AD_practica4.Habitacion">
+	    <property name="nombreHabitacion" value="Cocina" />
+	    <property name="pisoHabitacion" value="2" />
+	    <property name="tieneVentana" value="true" />
+	    <property name="persona" ref="persona2" />
+	</bean>
+	
+	<bean id="baño" class="es.studium.AD_practica4.Habitacion">
+	    <property name="nombreHabitacion" value="Baño" />
+	    <property name="pisoHabitacion" value="0" />
+	    <property name="tieneVentana" value="true" />
+	    <property name="persona" ref="persona1" />
+	</bean>
+	
+	<bean id="casa" class="es.studium.AD_practica4.Casa">
+	    <property name="nombreCasa" value="Mi Casa"/>
+	    <property name="habitaciones">
+	        <list>
+	            <ref bean="salon" />
+	            <ref bean="cocina" />
+	            <ref bean="baño" />
+	        </list>
+	    </property>
+	    <property name="propietario" ref="persona3"/>
+	</bean>
+
+</beans>
